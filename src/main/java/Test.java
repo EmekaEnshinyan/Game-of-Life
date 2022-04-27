@@ -7,13 +7,24 @@ public class Test extends JPanel {
 
         JFrame frame = new JFrame("top level container");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(300, 300);
-        JPanel contentPane = new JPanel(new GridLayout(2, 2, 0, 0));
+        frame.setSize(500, 500);
+        GridLayout grid = new GridLayout(25,25,0,0);
+        JPanel contentPane = new JPanel(grid);
         contentPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        contentPane.add("boxes", new Boxes());
-        contentPane.add("boxes", new Boxes());
-        contentPane.add("boxes", new Boxes());
-        contentPane.add("boxes", new Boxes());
+
+        System.out.println(contentPane.getMaximumSize());
+        System.out.println(contentPane.getPreferredSize());
+        System.out.println(grid.getColumns());
+        System.out.println(grid.getRows());
+        System.out.println(grid);
+
+        contentPane.setBackground(Color.BLACK);
+        for (int i = 0; i < grid.getRows() * grid.getColumns() - 20; i++){
+
+            contentPane.add("boxes", new Boxes());
+        }
+
+
         frame.add(contentPane);
 
 
@@ -21,15 +32,19 @@ public class Test extends JPanel {
     }
 
     static class Boxes extends JPanel {
-        public Dimension getPreferredSize() {
-            return new Dimension(50, 50);
-        }
-
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
-
             // Draw Text
-            g.drawRect(1,1,50,50);
+            g.setColor(Color.black);
+            g.drawRect(0,0,200,200);
+        }
+    }
+    static class Cell extends JPanel{
+        public void paintComponents(Graphics g){
+            super.paintComponents(g);
+            g.setColor(Color.BLACK);
+            g.fillRect(0,0,200,200);
+
         }
     }
 }

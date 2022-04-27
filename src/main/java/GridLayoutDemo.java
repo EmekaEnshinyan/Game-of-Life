@@ -1,6 +1,7 @@
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.Rectangle2D;
 import javax.swing.*;
 
 public class GridLayoutDemo extends JFrame {
@@ -10,6 +11,12 @@ public class GridLayoutDemo extends JFrame {
     JComboBox verGapComboBox;
     JButton applyButton = new JButton("Apply gaps");
     GridLayout experimentLayout = new GridLayout(0, 2);
+    public void paintComponent(Graphics g){
+        super.paintComponents(g);
+        Graphics2D graph = (Graphics2D) g;
+        graph.setPaint(Color.WHITE);
+        graph.drawRect(1,1,20,20);
+    }
 
     public GridLayoutDemo(String name) {
         super(name);
@@ -21,7 +28,7 @@ public class GridLayoutDemo extends JFrame {
         verGapComboBox = new JComboBox(gapList);
     }
 
-    public void addComponentsToPane(final Container pane) {
+    public void addComponentsToPane(final Container pane){
         initGaps();
         final JPanel compsToExperiment = new JPanel();
         compsToExperiment.setLayout(experimentLayout);
@@ -35,6 +42,7 @@ public class GridLayoutDemo extends JFrame {
                 (int) (buttonSize.getHeight() * 3.5) + maxGap * 2));
 
         //Add buttons to experiment with Grid Layout
+
         compsToExperiment.add(new JButton("Button 1"));
         compsToExperiment.add(new JButton("Button 2"));
         compsToExperiment.add(new JButton("Button 3"));
