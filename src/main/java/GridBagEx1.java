@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.applet.Applet;
 import java.awt.*;
 
@@ -7,7 +8,7 @@ public class GridBagEx1 extends Applet {
     protected void makebutton(String name,
                               GridBagLayout gridbag,
                               GridBagConstraints c) {
-        Button button = new Button(name);
+        Component box = new Component();
         gridbag.setConstraints(button, c);
         add(button);
     }
@@ -52,7 +53,8 @@ public class GridBagEx1 extends Applet {
     }
 
     public static void main(String args[]) {
-        Frame f = new Frame("GridBag Layout Example");
+        JFrame f = new JFrame("GridBag Layout Example");
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         GridBagEx1 ex1 = new GridBagEx1();
 
         ex1.init();

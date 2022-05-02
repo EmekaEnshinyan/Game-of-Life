@@ -18,6 +18,7 @@ public class Test extends JPanel {
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.gridheight = 100;
         constraints.gridwidth = 100;
+        constraints.fill = GridBagConstraints.BOTH;
         grid.setConstraints(new JButton("hello"), constraints);
         frame.setLayout(grid);
         frame.setVisible(true);
@@ -25,6 +26,7 @@ public class Test extends JPanel {
 
     static class Boxes extends JPanel {
         public void paintComponent(Graphics g) {
+
             super.paintComponent(g);
             // Draw Text
             g.setColor(Color.BLACK);
