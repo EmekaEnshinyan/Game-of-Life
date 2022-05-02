@@ -9,8 +9,8 @@ public class GridBagEx1 extends Applet {
                               GridBagLayout gridbag,
                               GridBagConstraints c) {
         Component box = new Component();
-        gridbag.setConstraints(button, c);
-        add(button);
+        gridbag.setConstraints(box, c);
+        add(box);
     }
 
     public void init() {
