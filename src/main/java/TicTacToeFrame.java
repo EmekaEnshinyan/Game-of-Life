@@ -44,10 +44,9 @@ public class TicTacToeFrame extends JFrame {
         JPanel contentPane = new JPanel(new BorderLayout());
         //contentPane.setBorder();
 
-        Component rect = new Box(1);
-        Component rect2 = new Box(2);
-        contentPane.add(rect, BorderLayout.CENTER);
-        contentPane.add(rect2, BorderLayout.PAGE_END);
+
+        contentPane.add(, BorderLayout.CENTER);
+        //contentPane.add(rect2, BorderLayout.PAGE_END);*/
 
     }
 
@@ -93,7 +92,13 @@ public class TicTacToeFrame extends JFrame {
         }
 
         //add the BLACK cells
-
+        class BCells extends JPanel {
+            public void addCell(Graphics g) {
+                super.paintComponent(g);
+                g.setColor(Color.BLACK);
+                g.fillRect(1, 1, 50, 50);
+            }
+        }
 
         }
     }

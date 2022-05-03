@@ -16,11 +16,16 @@ public class Test extends JPanel {
 
         GridBagLayout grid = new GridBagLayout();
         GridBagConstraints constraints = new GridBagConstraints();
-        constraints.gridheight = 100;
-        constraints.gridwidth = 100;
+
         constraints.fill = GridBagConstraints.BOTH;
-        grid.setConstraints(new JButton("hello"), constraints);
+        constraints.weightx = 10;
+        constraints.gridx = 10;
+        constraints.gridy = 10;
         frame.setLayout(grid);
+
+
+
+
         frame.setVisible(true);
     }
 
