@@ -14,6 +14,11 @@ public class OrganismFrame extends JFrame{
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
         panel.add(board = new Board(), BorderLayout.CENTER);
+        panel.add(board = new Board(), BorderLayout.CENTER);
+        panel.add(board = new Board(), BorderLayout.CENTER);
+        panel.add(board = new Board(), BorderLayout.CENTER);
+        panel.add(board = new Board(), BorderLayout.CENTER);
+        panel.add(board = new Board(), BorderLayout.CENTER);
         panel.setVisible(true);
         frame.add(panel);
         frame.setVisible(true);
@@ -29,11 +34,10 @@ public class OrganismFrame extends JFrame{
             super.paintComponent(g);
             int w = getWidth();
             int h = getHeight();
-            Graphics2D graph= (Graphics2D) g;
+            Graphics2D graph = (Graphics2D) g;
 
             graph.setPaint(Color.BLACK);
             graph.fill(new Rectangle2D.Double(5,5,w,h));
-
         }
 
     }
