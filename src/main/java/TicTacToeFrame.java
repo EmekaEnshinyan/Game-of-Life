@@ -26,17 +26,13 @@ import javax.swing.event.*;
 import java.util.Random;
 
 public class TicTacToeFrame extends JFrame {
-    private JSlider slider;
-    private JButton oButton, xButton;
     private Board board;
     private int lineThickness = 4;
-    private Color oColor = Color.BLUE, xColor = Color.RED;
-    static final char BLANK = ' ', O = 'O', X = 'X';
+    static final char BLANK = ' ', zero = 'O', x = 'X';
     private char position[] = {  // Board position (WHITE or BLACK)
             BLANK, BLANK, BLANK,
             BLANK, BLANK, BLANK,
             BLANK, BLANK, BLANK};
-    private int wins = 0, losses = 0, draws = 0;  // game count by user
 
     // Start the game
     public static void main(String args[]) {
@@ -45,7 +41,7 @@ public class TicTacToeFrame extends JFrame {
         //contentPane.setBorder();
 
 
-        contentPane.add(, BorderLayout.CENTER);
+        //contentPane.add(, BorderLayout.CENTER);
         //contentPane.add(rect2, BorderLayout.PAGE_END);*/
 
     }
@@ -66,7 +62,7 @@ public class TicTacToeFrame extends JFrame {
 
 
     // Board is what actually plays and displays the game
-    private class Board extends JPanel {
+    public class Board extends JPanel {
         private Random random = new Random();
         private int rows[][] = {{0, 2}, {3, 5}, {6, 8}, {0, 6}, {1, 7}, {2, 8}, {0, 8}, {2, 6}};
         // Endpoints of the 8 rows in position[] (across, down, diagonally)
@@ -91,14 +87,8 @@ public class TicTacToeFrame extends JFrame {
 
         }
 
-        //add the BLACK cells
-        class BCells extends JPanel {
-            public void addCell(Graphics g) {
-                super.paintComponent(g);
-                g.setColor(Color.BLACK);
-                g.fillRect(1, 1, 50, 50);
-            }
-        }
 
         }
+
+
     }
