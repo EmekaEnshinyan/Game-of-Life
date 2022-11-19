@@ -15,8 +15,6 @@ public class OrganismFrame extends JFrame{
         panel.setLayout(new FlowLayout());
         panel.add(board = new Board(), BorderLayout.CENTER);
         panel.setVisible(true);
-
-
         frame.add(panel);
         frame.setVisible(true);
 
@@ -33,7 +31,7 @@ public class OrganismFrame extends JFrame{
             int h = getHeight();
             Graphics2D graph= (Graphics2D) g;
 
-            graph.setPaint(Color.WHITE);
+            graph.setPaint(Color.BLACK);
             graph.fill(new Rectangle2D.Double(5,5,w,h));
 
         }
